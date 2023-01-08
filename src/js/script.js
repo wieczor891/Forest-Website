@@ -46,6 +46,12 @@ const scrollSpy = () => {
 				console.log(scrollY);
 			}
 		}
+	} else if (document.body.classList.contains('offer-page')) {
+		navItems.forEach((navItem) => navItem.classList.remove('active'));
+		navItems[2].classList.add('active');
+	} else if (document.body.classList.contains('contact-page')) {
+		navItems.forEach((navItem) => navItem.classList.remove('active'));
+		navItems[3].classList.add('active');
 	}
 };
 
@@ -54,7 +60,29 @@ const handleCurrentYear = () => {
 	footerYear.textContent = year;
 };
 
+function initMap() {
+	const Forest = { lat: 50.08831310990067, lng: 19.892898296257034 };
+	const map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 10,
+		center: Forest,
+	});
+	const marker = new google.maps.Marker({
+		position: Forest,
+		map: map,
+	});
+	const contentString = '<div id="content">Forest Group</div>';
+
+	const infowindow = new google.maps.InfoWindow({
+		content: contentString,
+	});
+
+	marker.addListener('click', () => {
+		infowindow.open(map, marker);
+	});
+}
+
 window.addEventListener('scroll', scrollSpy);
 linkClicked();
 handleCurrentYear();
 menuIcon.addEventListener('click', checkMenu);
+window.initMap = initMap;
