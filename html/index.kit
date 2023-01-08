@@ -17,57 +17,62 @@
 		></script>
 		<link rel="stylesheet" href="./dist/css/style.min.css" />
 	</head>
-	<body>
+	<body class="default-page">
 		<nav class="navbar">
-			<!-- <div class="wrapper1"> -->
-			<a href="#">
-				<h1><i class="fa-solid fa-tree"></i> Forest</h1>
-			</a>
-			<div class="nav-items">
-				<a href="#">Home</a>
-				<a href="#about-us">O nas</a>
-				<a href="#offer">Oferta</a>
-				<a href="contact">Kontakt</a>
+			<div class="wrapper nav-wrapper">
+				<a href="#">
+					<h1><i class="fa-solid fa-tree"></i> Forest</h1>
+				</a>
+				<div class="nav-items">
+					<a href="#" class="active">Home</a>
+					<a href="#about-us">O nas</a>
+					<a href="#offer">Oferta</a>
+					<a href="#contact">Kontakt</a>
+				</div>
+				<button class="burger-icon">
+					<i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i>
+				</button>
 			</div>
-			<button class="burger-icon">
-				<i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i>
-			</button>
-			<!-- </div> -->
 		</nav>
 		<main>
-			<section class="hero-image">
+			<section class="section home hero-image">
 				<div class="hero-bg"></div>
-				<div class="hero-text">
+				<div class="hero-text wrapper">
 					<p>Forest Group</p>
 					<h3>Najpiękniejszy park w Twojej okolicy!</h3>
 				</div>
 			</section>
 
 			<section class="section about-us" id="about-us">
-				<h2>O nas</h2>
-				<img
-					src="./dist/img/waters-3095682_640.min.jpg"
-					alt="Zielona wyspa pośrodku jeziora"
-				/>
-				<div class="text">
-					<h3>Niezapomniane przygody</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-						doloremque aliquam obcaecati, magni sed in. Placeat impedit qui,
-						possimus, id eos amet similique esse quaerat deleniti quia odio aut
-						ut et ex veniam sunt quibusdam? Laboriosam a quas dignissimos ab
-						maiores omnis quo modi! Dolorem tenetur consectetur magni voluptate
-						consequuntur a sint in quaerat cupiditate doloremque illo fugit
-					</p>
+				<div class="wrapper">
+					<h2>O nas</h2>
+					<div class="about-us-content">
+						<img
+							src="./dist/img/waters-3095682_640.min.jpg"
+							alt="Zielona wyspa pośrodku jeziora"
+						/>
+						<div class="text">
+							<h3>Niezapomniane przygody</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+								doloremque aliquam obcaecati, magni sed in. Placeat impedit qui,
+								possimus, id eos amet similique esse quaerat deleniti quia odio
+								aut ut et ex veniam sunt quibusdam? Laboriosam a quas
+								dignissimos ab maiores omnis quo modi! Dolorem tenetur
+								consectetur magni voluptate consequuntur a sint in quaerat
+								cupiditate doloremque illo fugit
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="banner">
+					<div class="banner-bg"></div>
+					<div class="banner-text">
+						<p>Przygoda dla całej rodziny</p>
+					</div>
 				</div>
 			</section>
-			<div class="banner">
-				<div class="banner-bg"></div>
-				<div class="banner-text">
-					<p>Przygoda dla całej rodziny</p>
-				</div>
-			</div>
-			<section class="section offer" id="offer">
+			<section class="section offer wrapper" id="offer">
 				<h2>Oferta</h2>
 				<p class="offer-subtitle">Wybierz jedną z naszych wspaniałych ofert!</p>
 				<div class="options">
@@ -108,10 +113,11 @@
 						<button class="btn btn-buy-it">Wybierz</button>
 					</div>
 				</div>
+				<a href="#" class="other-offers">Poznaj wszystkie nasze oferty!</a>
 			</section>
 		</main>
 		<footer class="footer">
-			<div class="wrapper">
+			<div class="wrapper footer-content">
 				<p class="logo"><i class="fa-solid fa-tree"></i> Forest</p>
 				<div class="links">
 					<div class="foot-about-us">
@@ -141,7 +147,7 @@
 			<a href="#">Home</a>
 			<a href="#about-us">O nas</a>
 			<a href="#offer">Oferta</a>
-			<a href="contact">Kontakt</a>
+			<a href="#contact">Kontakt</a>
 		</div>
 		<script src="./dist/js/js/script.min.js"></script>
 	</body>

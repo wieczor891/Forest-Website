@@ -13,6 +13,7 @@
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 49px;
 }
 
 a {
@@ -26,7 +27,6 @@ button {
 }
 
 h2 {
-	margin-top: 40px;
 	margin-bottom: 20px;
 	text-align: center;
 	font-weight: bold;
@@ -35,13 +35,6 @@ h2 {
 
 .fa-check {
 	color: var(--green-color);
-}
-
-.wrapper {
-	margin: 0 auto;
-	width: 75%;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 body {
@@ -53,20 +46,30 @@ body {
 }
 
 .section {
-	margin: 20px auto;
+	margin: 0 auto;
+	padding: 40px 0;
 }
 
 .navbar {
-	position: sticky;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	padding: 10px;
 	box-shadow: 0 3px 10px var(--dark-color);
 	background-color: var(--light-color);
 	z-index: 100;
+}
+
+.nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	a {
+		display: inline;
+		h1 {
+			display: inline;
+		}
+	}
 }
 
 .nav-items {
@@ -85,11 +88,14 @@ body {
 	}
 }
 
+.active {
+	color: var(--green-color);
+}
+
 .burger-icon {
 	position: relative;
 	font-size: 20px;
 	padding: 10px;
-	transition: rotate 1s;
 	cursor: pointer;
 	.fa-solid {
 		position: absolute;
@@ -108,11 +114,11 @@ body {
 
 .anime-show {
 	transform-origin: 0 0;
-	animation: test-show 1s linear forwards;
+	animation: test-show 0.5s linear forwards;
 }
 .anime-hide {
 	transform-origin: 0 0;
-	animation: test-hide 1s linear forwards;
+	animation: test-hide 0.5s linear forwards;
 }
 
 .mobile-menu {
@@ -127,7 +133,7 @@ body {
 	font-size: 1.6rem;
 	background-color: var(--light-color);
 	color: var(--green-color);
-	transition: transform 1s;
+	transition: transform 0.5s;
 	z-index: 10;
 	&-active {
 		transform: translateY(0);
@@ -169,14 +175,18 @@ body {
 }
 
 .about-us {
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	width: 80%;
-	.text {
-		margin: 0 auto;
-		h3 {
-			margin-top: 10px;
+	.about-us-content {
+		width: 100%;
+		.text {
+			margin: 0 auto;
+			h3 {
+				margin-top: 10px;
+			}
+		}
+		img {
+			width: 100%;
 		}
 	}
 }
@@ -197,7 +207,6 @@ body {
 .banner-text {
 	position: absolute;
 	text-align: center;
-	width: 80%;
 	padding: 20px;
 	color: var(--light-color);
 	border: 1px solid var(--light-color);
@@ -211,13 +220,9 @@ body {
 	background-color: var(--hero-bg-color);
 }
 
-.offer {
-	margin: 30px auto;
-	width: 80%;
-	.offer-subtitle {
-		margin-bottom: 20px;
-		text-align: center;
-	}
+.offer-subtitle {
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .options {
@@ -225,16 +230,15 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	height: 1300px;
 }
 
 .options-item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 30px;
-	width: 100%;
-	max-width: 300px;
+	margin: 20px;
+	padding: 30px 10px;
+	width: 250px;
 	border: 1px solid var(--dark-color);
 	border-radius: 8px;
 	box-shadow: 0 3px 10px #666;
@@ -269,7 +273,23 @@ body {
 	}
 }
 
+.other-offers {
+	display: block;
+	margin: 20px auto;
+	padding: 10px 20px;
+	width: 300px;
+	text-align: center;
+	border-radius: 8px;
+	color: var(--light-color);
+	background-color: var(--green-color);
+	transition: box-shadow 0.3s;
+	&:hover {
+		box-shadow: 0 0 19px var(--green-color);
+	}
+}
+
 .footer {
+	padding-top: 20px;
 	background-color: #eee;
 	.logo {
 		font-size: 50px;
@@ -318,7 +338,80 @@ body {
 }
 
 @media (min-width: 576px) {
-	body {
-		background-color: #a7f;
+	.wrapper {
+		margin: 0 40px;
+	}
+}
+
+@media (min-width: 768px) {
+	.burger-icon {
+		display: none;
+	}
+	.nav-items {
+		display: block;
+		a {
+			padding: 15px;
+		}
+	}
+	.hero-text {
+		font-size: 1.5rem;
+	}
+	.about-us {
+		.about-us-content {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			img {
+				width: 45%;
+				object-fit: cover;
+			}
+			.text {
+				width: 45%;
+			}
+		}
+	}
+	.banner {
+		height: 250px;
+		.banner-text {
+			max-width: 600px;
+		}
+	}
+
+	.options {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.footer {
+		.footer-content {
+			display: flex;
+			justify-content: space-between;
+			.links {
+				width: 400px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.wrapper {
+		max-width: 1000px;
+	}
+	.hero-image {
+		background-image: url('../../dist/img/jungle-1807476_1920.min.jpg');
+	}
+	.banner {
+		height: 300px;
+		background-image: url('../../dist/img/girl-5785590_1920.min.jpg');
+	}
+}
+
+@media (min-width: 1100px) {
+	.wrapper {
+		margin: 0 auto;
+		max-width: 1000px;
+	}
+	.banner {
+		height: 400px;
 	}
 }
