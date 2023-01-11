@@ -278,7 +278,7 @@ body {
 	margin-bottom: 10px;
 }
 
-.btn-buy-it {
+.btn {
 	display: block;
 	margin: 30px auto;
 	padding: 5px 40px;
@@ -354,10 +354,42 @@ body {
 	h5 {
 		margin-top: 10px;
 	}
+	label {
+		margin-top: 10px;
+	}
+}
+
+.form-alert {
+	display: none;
+	color: red;
+}
+
+#textarea {
+	resize: none;
+	padding: 5px;
 }
 
 .map {
 	height: 200px;
+}
+
+.form-accept {
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background-color: rgb(211, 209, 209);
+	box-shadow: 0 0 10px var(--green-color);
+	border-radius: 8px;
+	.btn-close {
+		margin: 20px auto 0;
+	}
+}
+
+.active {
+	display: block;
 }
 
 @keyframes test-show {

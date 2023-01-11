@@ -60,6 +60,8 @@ const handleCurrentYear = () => {
 	footerYear.textContent = year;
 };
 
+// Mapa Google
+
 function initMap() {
 	const Forest = { lat: 50.08831310990067, lng: 19.892898296257034 };
 	const map = new google.maps.Map(document.getElementById('map'), {
@@ -80,6 +82,108 @@ function initMap() {
 		infowindow.open(map, marker);
 	});
 }
+
+// Walidator formularza
+
+const btnSubmit = document.querySelector('.btn-submit');
+const btnClose = document.querySelector('.btn-close');
+const acceptFormWindow = document.querySelector('.form-accept');
+let errorCount = 0;
+
+function formItem(input, alert) {
+	this.input = input;
+	this.alert = alert;
+}
+
+const firstNameItem = new formItem(
+	document.querySelector('#first-name'),
+	document.querySelector('.first-name-alert')
+);
+const lastNameItem = new formItem(
+	document.querySelector('#last-name'),
+	document.querySelector('.last-name-alert')
+);
+const phoneNumberItem = new formItem(
+	document.querySelector('#phone-number'),
+	document.querySelector('.phone-number-alert')
+);
+const emailItem = new formItem(
+	document.querySelector('#mail'),
+	document.querySelector('.mail-alert')
+);
+const questionItem = new formItem(
+	document.querySelector('#question'),
+	document.querySelector('.question-alert')
+);
+
+const formItems = [
+	firstNameItem,
+	lastNameItem,
+	phoneNumberItem,
+	emailItem,
+	questionItem,
+];
+
+const sendForm = (e) => {
+	e.preventDefault();
+	checkForm();
+};
+
+const resetForm = () => {
+	formItems.forEach((item) => {
+		item.input.value = '';
+		item.alert.style.display = 'none';
+	});
+};
+
+const checkForm = () => {
+	errorCount = 0;
+	formItems.forEach((item) => {
+		if (item.input.value === '') {
+			item.alert.style.display = 'block';
+			item.alert.textContent = 'Uzupełnij pole!';
+			errorCount++;
+		} else {
+			item.alert.style.display = 'none';
+			item.alert.textContent = '';
+			checkPhoneNumber();
+			checkEmail();
+		}
+	});
+	if (errorCount == 0) {
+		resetForm();
+		positiveForm();
+	}
+};
+
+const checkPhoneNumber = () => {
+	const reg = /^[+]{0,1}[0-9]{9,11}$/;
+	if (!reg.test(phoneNumberItem.input.value)) {
+		phoneNumberItem.alert.textContent = 'Podaj prawidłowy numer telefonu';
+		phoneNumberItem.alert.style.display = 'block';
+		errorCount++;
+	}
+};
+
+const checkEmail = () => {
+	const reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+.[a-z]{2,3}$/i;
+	if (!reg.test(emailItem.input.value)) {
+		emailItem.alert.style.display = 'block';
+		emailItem.alert.textContent = 'Podaj prawidłowy adres e-mail';
+		errorCount++;
+	}
+};
+
+const positiveForm = () => {
+	acceptFormWindow.classList.add('active');
+};
+
+const closeFormWindow = () => {
+	acceptFormWindow.classList.remove('active');
+};
+
+btnSubmit.addEventListener('click', sendForm);
+btnClose.addEventListener('click', closeFormWindow);
 
 window.addEventListener('scroll', scrollSpy);
 linkClicked();

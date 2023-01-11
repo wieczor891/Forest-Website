@@ -66,13 +66,22 @@
 					<form action="" class="question-form">
 						<label for="first-name">Imię:</label>
 						<input type="text" id="first-name" />
+						<p class="first-name-alert form-alert">Podaj imię!</p>
 						<label for="last-name">Nazwisko:</label>
 						<input type="text" id="last-name" />
+						<p class="last-name-alert form-alert">Podaj nazwisko!</p>
 						<label for="phone-number">Numer telefonu:</label>
 						<input type="text" id="phone-number" />
+						<p class="phone-number-alert form-alert">Podaj numer telefonu!</p>
 						<label for="e-mail">Adres e-mail:</label>
-						<input type="text" id="e-mail" />
-						<textarea name="" id="" cols="30" rows="10"></textarea>
+						<input type="text" id="mail" />
+						<p class="mail-alert form-alert">Podaj adres e-mail!</p>
+						<label for="textarea">Treść pytania:</label>
+						<textarea name="" id="question" cols="30" rows="10"></textarea>
+						<p class="question-alert form-alert">Wpisz treść pytania!</p>
+						<button class="btn btn-submit" type="submit">
+							Wyślij zapytanie
+						</button>
 					</form>
 				</div>
 			</div>
@@ -110,6 +119,10 @@
 			<a href="./index.html#about-us">O nas</a>
 			<a href="./index.html#offer">Oferta</a>
 			<a href="./contact.html">Kontakt</a>
+		</div>
+		<div class="form-accept">
+			<p>Zapytanie zostało wysłane. Odpowiemy w jak najkrótszym czasie!</p>
+			<button class="btn btn-close">Zamknij</button>
 		</div>
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApyOEzegMOuQy-PVwSgKHmlnVz_mg5Q8c&callback=initMap&libraries=&v=weekly"
