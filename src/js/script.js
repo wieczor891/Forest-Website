@@ -175,11 +175,11 @@ const checkEmail = () => {
 };
 
 const positiveForm = () => {
-	acceptFormWindow.classList.add('active');
+	acceptFormWindow.classList.add('form-active');
 };
 
 const closeFormWindow = () => {
-	acceptFormWindow.classList.remove('active');
+	acceptFormWindow.classList.remove('form-active');
 };
 
 btnSubmit.addEventListener('click', sendForm);
