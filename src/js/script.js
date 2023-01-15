@@ -20,7 +20,6 @@ const closeMenu = () => {
 	barsIcon.classList.add('anime-show');
 	crossIcon.classList.add('anime-hide');
 	menu.classList.remove('mobile-menu-active');
-	console.log('close');
 };
 
 const checkMenu = () => {
@@ -42,8 +41,6 @@ const scrollSpy = () => {
 			if (scrollY >= sections[i].offsetTop - 49) {
 				navItems.forEach((navItem) => navItem.classList.remove('active'));
 				navItems[i].classList.add('active');
-				console.log(sections[i].offsetTop);
-				console.log(scrollY);
 			}
 		}
 	} else if (document.body.classList.contains('offer-page')) {
@@ -182,11 +179,10 @@ const closeFormWindow = () => {
 	acceptFormWindow.classList.remove('active');
 };
 
-btnSubmit.addEventListener('click', sendForm);
-btnClose.addEventListener('click', closeFormWindow);
-
 window.addEventListener('scroll', scrollSpy);
 linkClicked();
 handleCurrentYear();
 menuIcon.addEventListener('click', checkMenu);
 window.initMap = initMap;
+btnSubmit.addEventListener('click', sendForm);
+btnClose.addEventListener('click', closeFormWindow);
