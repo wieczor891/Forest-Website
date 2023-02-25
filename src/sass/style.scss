@@ -35,6 +35,14 @@ h2 {
 	text-transform: uppercase;
 }
 
+h3 {
+	margin-bottom: 10px;
+}
+
+.wrapper {
+	margin: 0 20px;
+}
+
 .fa-check,
 .fa-crown {
 	color: var(--green-color);
@@ -54,7 +62,7 @@ body {
 .navbar {
 	position: fixed;
 	top: 0;
-	padding: 10px;
+	padding: 15px;
 	width: 100%;
 	background-color: var(--light-color);
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
@@ -65,11 +73,8 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	a {
-		display: inline;
-		h1 {
-			display: inline;
-		}
+	p {
+		font-size: 1.3rem;
 	}
 }
 
@@ -135,12 +140,16 @@ body {
 	background-color: var(--light-color);
 	transition: transform 0.5s;
 	z-index: 10;
-	&-active {
-		transform: translateY(0);
-	}
+	// &-active {
+	// 	transform: translateY(0);
+	// }
 	a {
 		border-bottom: 2px solid var(--green-color);
 	}
+}
+
+.mobile-menu-active {
+	transform: translateY(0);
 }
 
 .show-menu {
@@ -152,7 +161,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	margin: 0 auto;
+	margin: 2em auto;
 	height: 40vh;
 	background-image: url('../../dist/img/jungle-1807476_640.min.jpg');
 	background-position: center;
@@ -178,11 +187,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	.about-us-content {
-		width: 100%;
+		padding: 20px;
 		.text {
 			margin: 0 auto;
 			h3 {
-				margin-top: 10px;
+				margin-top: 20px;
+			}
+			p {
+				line-height: 25px;
 			}
 		}
 		img {
@@ -198,7 +210,7 @@ body {
 	position: relative;
 	margin-top: 30px;
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	background-image: url('../../dist/img/girl-5785590_640.min.jpg');
 	background-position: center;
 	background-size: cover;
@@ -242,6 +254,11 @@ body {
 	border: 1px solid var(--dark-color);
 	border-radius: 8px;
 	box-shadow: 0 3px 10px #666;
+	.option-description {
+		p {
+			margin-bottom: 5px;
+		}
+	}
 }
 
 .premium-extra {
@@ -309,8 +326,10 @@ body {
 }
 
 .footer {
-	padding-top: 20px;
 	background-color: #eee;
+	.footer-content {
+		padding: 20px;
+	}
 	.logo {
 		font-size: 50px;
 	}
@@ -427,7 +446,7 @@ body {
 		display: none;
 	}
 	.nav-items {
-		display: block;
+		display: flex;
 		a {
 			padding: 15px;
 		}
