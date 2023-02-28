@@ -343,7 +343,7 @@ body {
 .footer {
 	background-color: #eee;
 	.footer-content {
-		padding: 2em;
+		padding: 2em 0;
 	}
 	.logo {
 		font-size: 5rem;
@@ -354,7 +354,8 @@ body {
 	display: flex;
 	justify-content: space-between;
 	h3 {
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
+		font-size: 1.4rem;
 	}
 	p {
 		margin-bottom: 0.5em;
