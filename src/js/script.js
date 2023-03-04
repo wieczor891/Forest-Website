@@ -23,11 +23,7 @@ const closeMenu = () => {
 };
 
 const checkMenu = () => {
-	if (menu.classList.contains('mobile-menu-active')) {
-		closeMenu();
-	} else {
-		openMenu();
-	}
+	menu.classList.contains('mobile-menu-active') ? closeMenu() : openMenu();
 };
 
 const linkClicked = () => {
@@ -179,10 +175,10 @@ const closeFormWindow = () => {
 	acceptFormWindow.classList.remove('form-active');
 };
 
-window.addEventListener('scroll', scrollSpy);
 linkClicked();
 handleCurrentYear();
-menuIcon.addEventListener('click', checkMenu);
 window.initMap = initMap;
+window.addEventListener('scroll', scrollSpy);
+menuIcon.addEventListener('click', checkMenu);
 btnSubmit.addEventListener('click', sendForm);
 btnClose.addEventListener('click', closeFormWindow);
