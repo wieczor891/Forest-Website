@@ -135,7 +135,7 @@ body {
 }
 
 .mobile-menu {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
@@ -371,19 +371,23 @@ body {
 }
 
 .contact-box {
-	margin: 30px auto;
+	margin: 3em auto;
 	.question-form {
 		display: flex;
 		flex-direction: column;
 	}
-	h4 {
-		margin-bottom: 20px;
+	h2 {
+		margin-bottom: 1em;
 	}
-	h5 {
-		margin-top: 10px;
+	h3 {
+		margin-top: 1em;
+	}
+	p {
+		font-size: 1.4rem;
 	}
 	label {
-		margin-top: 10px;
+		font-size: 1.4rem;
+		margin-top: 1em;
 	}
 }
 
@@ -552,6 +556,17 @@ body {
 
 	.contact-box {
 		flex-direction: row;
+		p,
+		label,
+		input {
+			font-size: 1.6rem;
+		}
+		a {
+			transition: color 0.3s;
+		}
+		a:hover {
+			color: var(--green-color);
+		}
 	}
 }
 
@@ -613,6 +628,15 @@ body {
 
 	.btn {
 		font-size: 1.8rem;
+	}
+
+	.contact-box {
+		flex-direction: row;
+		p,
+		label,
+		input {
+			font-size: 1.8rem;
+		}
 	}
 
 	.map {
